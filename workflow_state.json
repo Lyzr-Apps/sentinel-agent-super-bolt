@@ -1,0 +1,32 @@
+{
+  "workflow_name": "Sentinel Agent Governance System",
+  "pattern": "Multiple Independent Agents (UI-Orchestrated Sequential)",
+  "created_at": "2026-02-06",
+  "agents": {
+    "worker_agent": {
+      "agent_id": "69858e5be5d25ce3f598caf6",
+      "name": "Worker Agent",
+      "type": "independent",
+      "description": "Analyzes user tasks and generates detailed step-by-step execution plans",
+      "trigger": "Analyze Task on Task Input Panel",
+      "model": "gpt-4.1",
+      "temperature": 0.4,
+      "status": "created"
+    },
+    "sentinel_agent": {
+      "agent_id": "69858e7f07ec48e3dc90a21c",
+      "name": "Sentinel Agent",
+      "type": "independent",
+      "description": "Risk classifier that evaluates Worker plans against 6 dimensions",
+      "trigger": "Evaluate Plan on Plan Display Panel",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "status": "created"
+    }
+  },
+  "workflow_execution": {
+    "flow": "Input → Worker Agent → Sentinel Agent → Output",
+    "ui_orchestrated": true,
+    "sequential": true
+  }
+}

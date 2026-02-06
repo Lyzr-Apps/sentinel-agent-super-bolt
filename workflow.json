@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "User Task Input",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "worker_agent",
+      "type": "Agent",
+      "label": "Worker Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69858e5be5d25ce3f598caf6"
+    },
+    {
+      "id": "sentinel_agent",
+      "type": "Agent",
+      "label": "Sentinel Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69858e7f07ec48e3dc90a21c"
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Risk Assessment Output",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "worker_agent"
+    },
+    {
+      "source": "worker_agent",
+      "target": "sentinel_agent"
+    },
+    {
+      "source": "sentinel_agent",
+      "target": "output_node"
+    }
+  ]
+}

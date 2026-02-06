@@ -1,0 +1,85 @@
+{
+  "agent_name": "Sentinel Agent",
+  "agent_id": "69858e7f07ec48e3dc90a21c",
+  "agent_purpose": "risk_classification",
+  "description": "Evaluates execution plans across 6 risk dimensions, providing 0-3 severity scores and explanations for each dimension without making approval decisions",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "risk_scores": {
+        "irreversibility": "number",
+        "external_impact": "number",
+        "financial": "number",
+        "safety": "number",
+        "missing_context": "number",
+        "policy_violation": "number"
+      },
+      "risk_explanations": {
+        "irreversibility": "string",
+        "external_impact": "string",
+        "financial": "string",
+        "safety": "string",
+        "missing_context": "string",
+        "policy_violation": "string"
+      }
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "risk_scores": {
+        "irreversibility": 2,
+        "external_impact": 2,
+        "financial": 2,
+        "safety": 0,
+        "missing_context": 1,
+        "policy_violation": 1
+      },
+      "risk_explanations": {
+        "irreversibility": "Once the mass email is sent to all customers, it is difficult or impossible to recall or undo the message, especially if there are errors or accidental disclosures.",
+        "external_impact": "A price increase announcement has a moderate external impact as it affects many customers and could trigger substantial feedback or dissatisfaction.",
+        "financial": "The price change communication may lead to customer churn or increased support costs, representing moderate financial risk.",
+        "safety": "There are no physical safety concerns associated with this execution plan; the activities are limited to digital communications.",
+        "missing_context": "Most context is present, but further details about regulatory communication requirements and final approval authority are only briefly mentioned.",
+        "policy_violation": "There is a minor risk of policy considerations if customer communication or data handling policies are not strictly followed, but explicit policy violations are not evident in the current plan."
+      }
+    },
+    "metadata": {
+      "agent_name": "Sentinel Agent",
+      "timestamp": "2024-06-16T17:29:40Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:49:11.688255",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "risk_scores": {
+        "irreversibility": 2,
+        "external_impact": 2,
+        "financial": 2,
+        "safety": 0,
+        "missing_context": 1,
+        "policy_violation": 1
+      },
+      "risk_explanations": {
+        "irreversibility": "Once the mass email is sent to all customers, it is difficult or impossible to recall or undo the message, especially if there are errors or accidental disclosures.",
+        "external_impact": "A price increase announcement has a moderate external impact as it affects many customers and could trigger substantial feedback or dissatisfaction.",
+        "financial": "The price change communication may lead to customer churn or increased support costs, representing moderate financial risk.",
+        "safety": "There are no physical safety concerns associated with this execution plan; the activities are limited to digital communications.",
+        "missing_context": "Most context is present, but further details about regulatory communication requirements and final approval authority are only briefly mentioned.",
+        "policy_violation": "There is a minor risk of policy considerations if customer communication or data handling policies are not strictly followed, but explicit policy violations are not evident in the current plan."
+      }
+    },
+    "metadata": {
+      "agent_name": "Sentinel Agent",
+      "timestamp": "2024-06-16T17:29:40Z"
+    }
+  },
+  "test_passed": true
+}
